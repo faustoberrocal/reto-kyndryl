@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - 8081:8081
+    depends_on:
+      - app
+  app:
+    container_name: app-reto-kyndryl
+    build: ./reto-kyndryl
+    ports:
+      - 3081:3081
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    build: ./postgres
+    ports:
+      - 5432:5432

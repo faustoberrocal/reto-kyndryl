@@ -22,3 +22,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+kyndryl/reto-kyndryl/.mvn/wrapper/maven-wrapper.jar
+kyndryl/reto-kyndryl/.mvn/wrapper/maven-wrapper.jar
+kyndryl/reto-kyndryl/mvnw
+kyndryl/reto-kyndryl/mvnw.cmd
