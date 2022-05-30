@@ -1,0 +1,354 @@
+Lanzada por el usuario Fausto Berrocal
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins  in C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Cloning our Git)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/faustoberrocal/reto-kyndryl.git # timeout=10
+Fetching upstream changes from https://github.com/faustoberrocal/reto-kyndryl.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.36.1.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/faustoberrocal/reto-kyndryl.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 69dda29fa31b2d155365860eae68b2000a617b05 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 69dda29fa31b2d155365860eae68b2000a617b05 # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D master # timeout=10
+ > git.exe checkout -b master 69dda29fa31b2d155365860eae68b2000a617b05 # timeout=10
+Commit message: "Update application.properties"
+ > git.exe rev-list --no-walk 69dda29fa31b2d155365860eae68b2000a617b05 # timeout=10
+[Pipeline] dir
+Running in C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl
+[Pipeline] {
+[Pipeline] dir
+Running in C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl
+[Pipeline] {
+[Pipeline] withMaven
+[withMaven] Options: []
+[withMaven] Available options: 
+[withMaven] using JDK installation provided by the build agent
+$ where mvn.cmd
+[withMaven] using Maven installation provided by the build agent with executable F:\Instaladores\apache-maven-3.8.5-bin\apache-maven-3.8.5\bin\mvn.cmd
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl>mvn clean package 
+----- withMaven Wrapper script -----
+Picked up JAVA_TOOL_OPTIONS: -Dmaven.ext.class.path="C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl@tmp\withMavencd706f6d\pipeline-maven-spy.jar" -Dorg.jenkinsci.plugins.pipeline.maven.reportsFolder="C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl@tmp\withMavencd706f6d" 
+Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
+Maven home: F:\Instaladores\apache-maven-3.8.5-bin\apache-maven-3.8.5
+Java version: 11.0.15.1, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-11.0.15.1
+Default locale: es_PE, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+[INFO] [jenkins-event-spy] Generate C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl@tmp\withMavencd706f6d\maven-spy-20220529-180359-17616879687097474117268.log.tmp ...
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.fausto:reto-kyndryl >-----------------------
+[INFO] Building reto-kyndryl 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ reto-kyndryl ---
+[INFO] Deleting C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ reto-kyndryl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ reto-kyndryl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ reto-kyndryl ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ reto-kyndryl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ reto-kyndryl ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.fausto.RetoKyndrylApplicationTests
+18:04:30.670 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+18:04:30.777 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+18:04:31.094 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.fausto.RetoKyndrylApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+18:04:31.215 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.fausto.RetoKyndrylApplicationTests], using SpringBootContextLoader
+18:04:31.264 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.fausto.RetoKyndrylApplicationTests]: class path resource [com/fausto/RetoKyndrylApplicationTests-context.xml] does not exist
+18:04:31.265 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.fausto.RetoKyndrylApplicationTests]: class path resource [com/fausto/RetoKyndrylApplicationTestsContext.groovy] does not exist
+18:04:31.265 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.fausto.RetoKyndrylApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:04:31.269 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.fausto.RetoKyndrylApplicationTests]: RetoKyndrylApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:04:31.705 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.fausto.RetoKyndrylApplicationTests]
+18:04:32.335 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\target\classes\com\fausto\RetoKyndrylApplication.class]
+18:04:32.339 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.fausto.RetoKyndrylApplication for test class com.fausto.RetoKyndrylApplicationTests
+18:04:33.079 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.fausto.RetoKyndrylApplicationTests]: using defaults.
+18:04:33.080 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+18:04:33.278 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5ee2b6f9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@23d1e5d0, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@704f1591, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@58fb7731, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@13e547a9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3fb6cf60, org.springframework.test.context.transaction.TransactionalTestExecutionListener@37ddb69a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@349c1daf, org.springframework.test.context.event.EventPublishingTestExecutionListener@dfddc9a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4b9df8a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5e8ac0e1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@aafcffa, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6955cb39, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@235a0c16, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2b5f4d54]
+18:04:33.448 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@2e9fda69 testClass = RetoKyndrylApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@17cdf2d0 testClass = RetoKyndrylApplicationTests, locations = '{}', classes = '{class com.fausto.RetoKyndrylApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@77659b30, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6b0d80ed, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@791d1f8b, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2bec854f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@723e88f9, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3e92efc3], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.0)
+
+2022-05-29 18:04:37.014  INFO 7436 --- [           main] com.fausto.RetoKyndrylApplicationTests   : Starting RetoKyndrylApplicationTests using Java 11.0.15.1 on DESKTOP-GT11D3M with PID 7436 (started by DESKTOP-GT11D3M$ in C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl)
+2022-05-29 18:04:37.019  INFO 7436 --- [           main] com.fausto.RetoKyndrylApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2022-05-29 18:04:50.165  INFO 7436 --- [           main] com.fausto.RetoKyndrylApplicationTests   : Started RetoKyndrylApplicationTests in 16.338 seconds (JVM running for 23.209)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.631 s - in com.fausto.RetoKyndrylApplicationTests
+[INFO] Running com.fausto.service.ServiceTest
+2022-05-29 18:04:54.780  INFO 7436 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.fausto.service.ServiceTest], using SpringBootContextLoader
+2022-05-29 18:04:54.798  INFO 7436 --- [           main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.fausto.service.ServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-05-29 18:04:54.812  INFO 7436 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.fausto.service.ServiceTest]: ServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-05-29 18:04:54.896  INFO 7436 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.fausto.RetoKyndrylApplication for test class com.fausto.service.ServiceTest
+2022-05-29 18:04:54.913  INFO 7436 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-05-29 18:04:54.915  INFO 7436 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@55a0f011, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7ea42c82, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@39133244, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@ceb7701, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5e193ef5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@106c988, org.springframework.test.context.transaction.TransactionalTestExecutionListener@21274afe, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76a362a4, org.springframework.test.context.event.EventPublishingTestExecutionListener@61da0413, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5627cb29, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4d4c1ba9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2017f6e6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@115c946b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@79ca7bea, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@54f6b629]
+2022-05-29 18:04:55.162  INFO 7436 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-29 18:04:58.138  INFO 7436 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.103 s - in com.fausto.service.ServiceTest
+2022-05-29 18:04:59.098  INFO 7436 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-29 18:04:59.121  INFO 7436 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ reto-kyndryl ---
+[INFO] Building jar: C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\target\reto-kyndryl-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.0:repackage (repackage) @ reto-kyndryl ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.3.0:unpack (unpack) @ reto-kyndryl ---
+[INFO] Configured Artifact: com.fausto:reto-kyndryl:0.0.1-SNAPSHOT:jar
+[INFO] Unpacking C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\target\reto-kyndryl-0.0.1-SNAPSHOT.jar to C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl\target\dependency with includes "" and excludes ""
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:14 min
+[INFO] Finished at: 2022-05-29T18:05:17-05:00
+[INFO] ------------------------------------------------------------------------
+[INFO] [jenkins-event-spy] Generated C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl@tmp\withMavencd706f6d\maven-spy-20220529-180359-17616879687097474117268.log
+[Pipeline] }
+[withMaven] artifactsPublisher - Archive artifact pom.xml under com\fausto\reto-kyndryl\0.0.1-SNAPSHOT\reto-kyndryl-0.0.1-SNAPSHOT.pom
+[withMaven] artifactsPublisher - Archive artifact target\reto-kyndryl-0.0.1-SNAPSHOT.jar under com\fausto\reto-kyndryl\0.0.1-SNAPSHOT\reto-kyndryl-0.0.1-SNAPSHOT.jar
+[withMaven] junitPublisher - Archive test results for Maven artifact com.fausto:reto-kyndryl:jar:0.0.1-SNAPSHOT generated by maven-surefire-plugin:test (default-test): target\surefire-reports\*.xml
+[withMaven] junitPublisher - Jenkins JUnit Attachments Plugin not found, can't publish test attachments.Grabando resultados de tests
+[withMaven] Jenkins Task Scanner Plugin not found, don't display results of source code scanning for 'TODO' and 'FIXME' in pipeline screen.
+[withMaven] Publishers: Pipeline Graph Publisher: 29 ms, Generated Artifacts Publisher: 1276 ms, Junit Publisher: 2080 ms, Dependencies Fingerprint Publisher: 1 ms, JGiven Publisher: 6 ms, Open Task Scanner Publisher: 2 ms
+[Pipeline] // withMaven
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Building our image)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] dir
+Running in C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl
+[Pipeline] {
+[Pipeline] dir
+Running in C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2\kyndryl\reto-kyndryl>docker build -t "faustoberrocal/reto-kyndryl:10" . 
+#2 [internal] load .dockerignore
+#2 sha256:46cea1aff23164fcecf2f0103fd790199a1f341cdddb5a966111494e3bce51c2
+#2 transferring context: 2B done
+#2 ...
+
+#1 [internal] load build definition from Dockerfile
+#1 sha256:841eee3db609e4a0f0149781180d30feb2bd051df4d50faffe7a2a31fa7dec8b
+#1 transferring dockerfile: 423B 0.1s done
+#1 DONE 1.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:46cea1aff23164fcecf2f0103fd790199a1f341cdddb5a966111494e3bce51c2
+#2 DONE 1.5s
+
+#3 [internal] load metadata for docker.io/library/openjdk:11
+#3 sha256:87dc9b3cee4adf6787fd792601b37fcaad0ed6bd5314a02f15c26446f91634ad
+#3 DONE 3.3s
+
+#4 [1/4] FROM docker.io/library/openjdk:11@sha256:9bc6f8070c8f196de091eb098292b59b1dbe04b6c82375a8a33f4f414c049d19
+#4 sha256:2b91a37313e2fbaeb5686f6b1aacbdc860587cc41a15115cafa4e5abf0066f9e
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 sha256:d81e5090c5c87d98452875fb425269eea3ecff5d9e0a6fa4af4b79a6cc029888
+#5 transferring context: 333.42kB 0.1s
+#5 transferring context: 19.67MB 1.5s done
+#5 DONE 2.3s
+
+#6 [2/4] COPY target/dependency/BOOT-INF/lib /app/lib
+#6 sha256:10490f63be176f94cf4830dbb1c111bc2992adb970798b29e12340b32d676d13
+#6 CACHED
+
+#7 [3/4] COPY target/dependency/META-INF /app/META-INF
+#7 sha256:f62089f778932cb43f70479e5a7f5ddf23b86cd062dfd0fd9ce0c73d5bdc26fd
+#7 DONE 2.4s
+
+#8 [4/4] COPY target/dependency/BOOT-INF/classes /app
+#8 sha256:2b64793f705a3e0c4f4c5960685908ecd73b2e0d4bd75510f138745f88c128e7
+#8 DONE 1.7s
+
+#9 exporting to image
+#9 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#9 exporting layers
+#9 exporting layers 2.2s done
+#9 writing image sha256:534f8c996e184176f9ec254f30f56fc1188a1efc4be5d5e2fc8a6af438a3cb33
+#9 writing image sha256:534f8c996e184176f9ec254f30f56fc1188a1efc4be5d5e2fc8a6af438a3cb33 0.2s done
+#9 naming to docker.io/faustoberrocal/reto-kyndryl:10
+#9 naming to docker.io/faustoberrocal/reto-kyndryl:10 0.1s done
+#9 DONE 3.8s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy our image)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withDockerRegistry
+$ docker login -u faustoberrocal -p ******** https://index.docker.io/v1/
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account. 
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2>docker tag "faustoberrocal/reto-kyndryl:10" "faustoberrocal/reto-kyndryl:10" 
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2>docker push "faustoberrocal/reto-kyndryl:10" 
+The push refers to repository [docker.io/faustoberrocal/reto-kyndryl]
+f057172698ff: Preparing
+a4eb9c18a2f6: Preparing
+29b475199730: Preparing
+e5ce43743a3d: Preparing
+d744b7303bde: Preparing
+817e710a8d04: Preparing
+ee509ed6e976: Preparing
+9177197c67d0: Preparing
+7dbadf2b9bd8: Preparing
+e7597c345c2e: Preparing
+ee509ed6e976: Waiting
+9177197c67d0: Waiting
+7dbadf2b9bd8: Waiting
+e7597c345c2e: Waiting
+817e710a8d04: Waiting
+d744b7303bde: Mounted from library/openjdk
+e5ce43743a3d: Mounted from library/openjdk
+f057172698ff: Pushed
+a4eb9c18a2f6: Pushed
+817e710a8d04: Mounted from library/openjdk
+9177197c67d0: Mounted from library/openjdk
+ee509ed6e976: Mounted from library/openjdk
+7dbadf2b9bd8: Mounted from library/openjdk
+e7597c345c2e: Mounted from library/openjdk
+29b475199730: Pushed
+10: digest: sha256:eddd66ced904a11a755e4d6cb48a86bf49164ba62ca416f62ef6c5761fef506e size: 2423
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Cleaning up)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Reto-Kyndryl-Continous-Delivery@2>docker rmi faustoberrocal/reto-kyndryl:10 
+Untagged: faustoberrocal/reto-kyndryl:10
+Untagged: faustoberrocal/reto-kyndryl@sha256:eddd66ced904a11a755e4d6cb48a86bf49164ba62ca416f62ef6c5761fef506e
+Deleted: sha256:534f8c996e184176f9ec254f30f56fc1188a1efc4be5d5e2fc8a6af438a3cb33
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

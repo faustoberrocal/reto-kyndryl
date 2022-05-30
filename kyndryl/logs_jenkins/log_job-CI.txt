@@ -1,0 +1,34 @@
+Ejecutado porque se detectaron cambios en el repositorio
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Still waiting to schedule task
+Esperando por un ejecutor
+Running on Jenkins  in C:\ProgramData\Jenkins\.jenkins\workspace\Reto-kyndryl-CI
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Cloning our Git)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\Reto-kyndryl-CI\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/faustoberrocal/reto-kyndryl.git # timeout=10
+Fetching upstream changes from https://github.com/faustoberrocal/reto-kyndryl.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.36.1.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/faustoberrocal/reto-kyndryl.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 69dda29fa31b2d155365860eae68b2000a617b05 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 69dda29fa31b2d155365860eae68b2000a617b05 # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D master # timeout=10
+ > git.exe checkout -b master 69dda29fa31b2d155365860eae68b2000a617b05 # timeout=10
+Commit message: "Update application.properties"
+ > git.exe rev-list --no-walk 69dda29fa31b2d155365860eae68b2000a617b05 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
