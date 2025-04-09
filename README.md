@@ -1,2 +1,2 @@
 # reto-kyndryl
- Este es el repositorio el reto tecnico
+ Este es el repositorio del reto tecnico
